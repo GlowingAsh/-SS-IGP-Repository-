@@ -7,4 +7,6 @@ fp_write.touch()
 
 with fp_read.open(mode= "r", encoding = "UTF-8", newline = "") as file:
 
-    days = []
+    Day = []
+    Cash_on_hand = []
+    
