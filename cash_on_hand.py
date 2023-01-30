@@ -11,8 +11,18 @@ with fp_read.open(mode= "r", encoding = "UTF-8", newline = "") as file:
 
     Day = []
     Cash_On_Hand = []
+    
+    total = 0
+    previous_day_value = 0
+    for row in reader:
+        day = row[0]
+        cash_on_hand = float(row[1])
+        total += cash_on_hand
+        if previous_day_value != 0:
+            difference = cash_on_hand - previous_day_value
+            if difference < 0:
+              print(f"[CASH DEFICIT] DAY: {day}, AMOUNT: SGD{difference}")
+        previous_day_value = cash_on_hand
 
-    def total_calculated(option):
-        
 
 
