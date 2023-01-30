@@ -6,4 +6,5 @@ fp_write = Path.cwd()/"summary_report.txt"
 fp_write.touch()
 
 with fp_read.open(mode= "r", encoding = "UTF-8", newline = "") as file:
-    
+
+    days = []
