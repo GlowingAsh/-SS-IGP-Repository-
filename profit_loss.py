@@ -4,14 +4,18 @@
 from pathlib import Path
 import csv
 
+
+#create a file to csv file.
 fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
 
+#read the csv file to append Net Profit
 with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   reader = csv.reader(file)
   next(reader) #skip header
   
+ # create empty lists to store the net profit, day and the differences 
   net_profit = []
-  day = []
+  days = []
+  differences = []
   
-  profit_loss = []
-  
+
