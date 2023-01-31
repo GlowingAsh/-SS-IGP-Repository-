@@ -3,9 +3,18 @@
 import cash_on_hand, overheads, profit_loss
 
 def main():
-  
-  overheads.overhead_function()
+  """
+  Function will integrate the different different functions higest_overheads, cash_on_hand and profitloss function
+  """
+  overheads.highest_overhead()
   cash_on_hand.cash_on_hand_function()
   profit_loss.profitloss_function()
   
- main()
+  return main()
+
+
+from pathlib import Path
+fp = Path.cwd()/"summary_report.txt" 
+
+with fp.open(mode="w", encoding="UTF-8") as file:
+  file.write(f"{main()}")
