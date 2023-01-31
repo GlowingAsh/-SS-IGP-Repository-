@@ -18,4 +18,13 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   days = []
   differences = []
   
+  #append the empty lists 
+  for data in reader(file):
+      net_profit.append(data[4])
+      
 
+def profit_loss():
+  """
+  -function will return days where net profit is lower than the previous days with the differences
+  """
+  
