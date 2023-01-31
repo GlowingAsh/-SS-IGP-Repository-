@@ -17,4 +17,8 @@ from pathlib import Path
 fp = Path.cwd()/"summary_report.txt" 
 
 with fp.open(mode="w", encoding="UTF-8") as file:
+<<<<<<< HEAD
   file.write(f"{main()}")
+=======
+  file.write(f"{main()}")
+>>>>>>> 316ad08073a80359238f87c93c6b0862bc0c21ff
