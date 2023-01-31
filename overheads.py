@@ -21,10 +21,15 @@ def highest_oh(category, overheads):
     and state the the percentage of the category
     The only two values in the function will be category and overheads.
     """
-    highest = max(overheads) # Variable called highest, will contain the maximum value within overheads
-    highest_index = overheads.index(highest) # Highest_index will be containing the index value of the Overheads, of the maximum/highest value
+    highest = 0
+    highest_category = ""
 
-    return f"[HIGHEST OVERHEAD] Marketing Expense: {category[highest_index]}: {highest}"
+    for index, value in enumerate(overheads):
+        if value > highest:
+            highest = value
+            highest_category = category[index]
+            
+    return f"[HIGHEST OVERHEAD] Marketing Expense: {highest_category}: {highest}"
 
 print(highest_oh(category, overheads))
 
