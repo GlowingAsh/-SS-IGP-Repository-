@@ -9,8 +9,7 @@ import csv
 fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
 
 #read the csv file to append Net Profit
-with fp.open(mode="r", encoding="UTF
-             -8", newline="") as file:
+with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   reader = csv.reader(file)
   next(reader) #skip header
   
