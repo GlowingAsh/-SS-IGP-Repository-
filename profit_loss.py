@@ -9,7 +9,8 @@ import csv
 fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
 
 #read the csv file to append Net Profit
-with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+with fp.open(mode="r", encoding="UTF
+             -8", newline="") as file:
   reader = csv.reader(file)
   next(reader) #skip header
   
@@ -19,12 +20,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   differences = []
   
   #append the empty lists 
-  for data in reader(file):
-      net_profit.append(data[4])
-      
+  for row in reader(file):
+      net_profit.append(row[4])
+      days.append(row[0])
 
 def profit_loss():
   """
   -function will return days where net profit is lower than the previous days with the differences
   """
-  
