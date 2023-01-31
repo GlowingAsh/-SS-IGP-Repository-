@@ -1,9 +1,9 @@
 from pathlib import Path
 import csv
 
-fp = Path.cwd()/"Overheads.csv"
+fp_read = Path.cwd()/"csv_reports"/"Overheads.csv"
 
-with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
 
@@ -29,7 +29,7 @@ def highest_oh(category, overheads):
             highest = value
             highest_category = category[index]
             
-    return f"[HIGHEST OVERHEAD] Marketing Expense: {highest_category}: {highest}"
+    return f"[HIGHEST OVERHEAD] {highest_category}: {highest}"
 
 print(highest_oh(category, overheads))
 
