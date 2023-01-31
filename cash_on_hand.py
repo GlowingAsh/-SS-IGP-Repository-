@@ -9,11 +9,9 @@ with fp_read.open(mode= "r", encoding = "UTF-8", newline = "") as file:
     reader = csv.reader(file)
     next(reader)
 
-    Day = []
-    Cash_On_Hand = []
-    
     total = 0
     previous_day_value = 0
+    
     for row in reader:
         day = float(row[0])
         cash_on_hand = float(row[1])
