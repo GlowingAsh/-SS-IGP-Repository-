@@ -32,4 +32,7 @@ def profit_loss():
       else:
         if(line_count > 1 and (int(row[4]) < int(prev_day_val))
         
-          profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val}
+          profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val} - int(row[4])}') 
+        line_count += 1 
+        prev_day_val = row[4]                                                                   
+  return profit_loss
