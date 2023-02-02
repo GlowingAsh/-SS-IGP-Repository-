@@ -3,7 +3,8 @@ import csv
 
 def overheads_function():
     """
-    Function called overheads will identify the highest overhead category and state the %
+    Function called overheads 
+    Will identify the highest overhead category and state the %
     """
     
     # File path will be under csv_reports folder, selecting the Overheads.csv file
