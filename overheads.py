@@ -1,39 +1,49 @@
 from pathlib import Path
 import csv
 
-fp_read = Path.cwd()/"csv_reports"/"Overheads.csv"
-
-with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv.reader(file)
-    next(reader) # skip header
-
-    category = [] # List called category to store values under Category
-    overheads = [] # List called overheads to store values under Overheads
-
-    for row in reader:
-        category.append(row[0]) # Value in index 0 will be appended into Category
-        overheads.append(float(row[1])) # Value in index 1 will be appended into Overheads, since there is decimals in the values, it will be stored as a float value
-        
-
-def highest_oh(category, overheads):
+def overheads_function():
     """
-    Function will be able to identify the highest overhead category 
-    and state the the percentage of the category
-    The only two values in the function will be category and overheads.
+    Function called overheads 
+    Will identify the highest overhead category and state the %
     """
-    highest = 0
-    highest_category = ""
+    
+    # File path will be under csv_reports folder, selecting the Overheads.csv file
+    fp = Path.cwd()/"csv_reports\Overheads.csv"
 
-    for index, value in enumerate(overheads):
-        if value > highest:
-            highest = value
-            highest_category = category[index]
-            
-    return f"[HIGHEST OVERHEAD] {highest_category}: {highest}"
-
-print(highest_oh(category, overheads))
-
+    # The overheads. csv file will be opened in read mode with UTF-8 encoding
+    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+    
+        # Create a reader object to read the file
+        reader = csv.reader(file)
         
+        #sSkip the first line of the file
+        next(reader)
+        
+        # Variable maximum_value and maximum_overhead is assigned 0
+        maxixmum_value = 0
+        maximum_overhead = 0
+
+        # A for loop is used in the reader 
+        for row in reader:
+
+            # The % sign is stripped of the 1st index column values, which is the overhead values
+            overhead_value = float(row[1].strip("%"))
+
+            # String will check if the overhead_value is graeter than the maximum_value
+            if overhead_value > maxixmum_value:
+
+                #The loop will be repeated till the maximum value is found, and the maximum value will be assigned to overhead_value
+                maxixmum_value = overhead_value
+
+                #The row will be assigned to the maximum_overhead
+                maximum_overhead = row
+
+        # A variable called max_overhead_value will be assigned to the string, f string is used to contain the values of the category and value of overhead
+        max_overhead_value = f"[HIGHEST OVERHEADS] {maximum_overhead[0].upper()}: {maximum_overhead[1]}%"
+
+        # For loop will then return the final values
+        return max_overhead_value
+       
 
 
 

@@ -1,40 +1,40 @@
-# •	Profit & Loss csv : The program will compute the difference 
-# in the net profit column if net profit on the current day is lower than the previous day. 
-
-# ludwig is
-
 from pathlib import Path
 import csv
 
-def profit_loss():
+def profit_loss_function():
   """
-  -function will return days where net profit is lower than the previous days with the differences
+  Function called profit_loss Function
+  Will compute the difference in the net profit column if the net profit on the current day is lower than the previous day.
   """
   
-  #create an empty list
+  # Creates an empty list
   profit_loss = []
   
-  #create a file to csv file.
+  # # The Profit_Loss.csv file will be opened in read mode with UTF-8 encoding
   fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
   
-  #read the csv file to append Net Profit
+  # Read the csv file 
   with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   
     reader = csv.reader(file)
-    next(reader) #skip header
-  
+
+    # Skip header
+    next(reader) 
+    #starts counting the first row of the csv file
     line_count = 0
+   
     prev_day_value = 0
     
-    #loop through all the rows
+    # A for loop is used in the reader to store the values of net profit into prev_day_value
     for row in reader:
-      if line count == 0:
+      if line_count == 0:
         line_count += 1 
         prev_day_value = row[4]
       else:
-        if(line_count > 1 and (int(row[4]) < int(prev_day_val))
+        if(line_count > 1 and (int(row[4]) < int(prev_day_val))): #if not it will return to the code here
         
-        profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val} - int(row[4])}') 
+          profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val) - int(row[4])}') 
         line_count += 1 
-        prev_day_val = row[4]                                                                   
+        prev_day_val = row[4]      
+  # Return keyword to return profit loss together with f-string
   return profit_loss
