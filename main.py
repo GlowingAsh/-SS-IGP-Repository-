@@ -18,7 +18,9 @@ def main():
     for i in range(len(profit_losss)):
       summary +=  profit_losss[i] + '\n'
 
-  with open("summary_report.txt", mode="w") as file:
+  from pathlib import Path
+  fp = Path.cwd()/"summary_report.txt"
+  with fp.open(mode="w", encoding="UTF-8") as file:
     file.write(summary)
 
 main()
