@@ -16,7 +16,7 @@ def overheads_function():
         # Create a reader object to read the file
         reader = csv.reader(file)
         
-        #sSkip the first line of the file
+        # Skip the first line of the file
         next(reader)
         
         # Variable maximum_value and maximum_overhead is assigned 0
@@ -41,8 +41,8 @@ def overheads_function():
         # A variable called max_overhead_value will be assigned to the string, f string is used to contain the values of the category and value of overhead
         max_overhead_value = f"[HIGHEST OVERHEADS] {maximum_overhead[0].upper()}: {maximum_overhead[1]}%"
 
-        # For loop will then return the final values
-        return max_overhead_value
+    # For loop will then return the final values
+    return max_overhead_value
        
 
 
