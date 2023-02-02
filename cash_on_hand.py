@@ -1,24 +1,15 @@
 from pathlib import Path
 import csv
 
-fp_read = Path.cwd()/"csv_reports/Cash_on_hand.csv"
+def cash_on_hand():
+    prev_day = 0
+    cash_deficit = []
+    with open ('csv_reports\Cash_on_hand.csv') as csv_file:
+        csv_Reader = csv.reader(csv_file, delimiter = ',')
+        line_count = 0
 
-with fp_read.open(mode= "r", encoding = "UTF-8", newline = "") as file:
-    reader = csv.reader(file)
-    next(reader)
-
-    total = 0
-    previous_day_value = 0
-    
-    for row in reader:
-        day = float(row[0])
-        cash_on_hand = float(row[1])
-        total += cash_on_hand
-        if previous_day_value != 0:
-            difference = cash_on_hand - previous_day_value
-            if difference < 0:
-              print(f"[CASH DEFICIT] DAY: {round(day,1)}, AMOUNT: SGD{round(abs(difference),2)}")
-        previous_day_value = cash_on_hand
-
-
+        for row in csv_reader:
+            if lne_count == 0:
+                line_count += 1
+                prev_day = row[1]
 
