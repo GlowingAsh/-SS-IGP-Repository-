@@ -3,7 +3,8 @@ import csv
 
 def profit_loss_function():
   """
-  -function will return days where net profit is lower than the previous days with the differences
+  Function called profit_loss Function
+  Will compute the difference in the net profit column if the net profit on the current day is lower than the previous day.
   """
   
   #create an empty list
