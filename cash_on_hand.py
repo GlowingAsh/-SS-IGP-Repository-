@@ -5,11 +5,12 @@ def cash_on_hand_function():
     """
     created a cash on hand function to calculate cash_on_hand
     """
-    prev_day = 0
     # created a variable whereby the first day, previous day, will start from 0
-    cash_deficit = []
+    prev_day = 0
+    
     # created a variable to calculate the cash deficit, if there was a cash deficit
     # the empty list would be used to store the cash deficit
+    cash_deficit = []
     
     # create a file to csv file
     fp = Path.cwd()/"csv_reports\Cash_on_hand.csv"
