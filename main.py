@@ -18,7 +18,8 @@ def main():
     for i in range(len(profit_losss)):
       summary +=  profit_losss[i] + '\n'
 
-  with open("summary_report.txt","a+") as f:
-    f.write(summary) 
-    
+  fp = Path.cwd(summary)/"cluster_report.txt"
+  with fp.open(mode="w", encodin="UTF-8") as file:
+    file.write(summary)
+
 main()
