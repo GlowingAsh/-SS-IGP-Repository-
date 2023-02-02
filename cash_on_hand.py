@@ -6,15 +6,19 @@ def cash_on_hand():
     created a cash on hand function to calculate cash_on_hand
     """
     prev_day = 0
-    #created a variable whereby the first day, previous day, will start from 0
+    # created a variable whereby the first day, previous day, will start from 0
     cash_deficit = []
     # created a variable to calculate the cash deficit, if there was a cash deficit
+    # the empty list would be used to store the cash deficit
+    
     with open ('csv_reports\Cash_on_hand.csv') as csv_file:
         # opening the csv file on cash on hand to use the data
         csv_reader = csv.reader(csv_file, delimiter = ',')
         line_count = 0
-# used for loop 
+        
+# used for loop to execute the body of code once for each item
         for row in csv_reader:
+            # 
             if line_count == 0:
                 line_count += 1
                 prev_day = row[1]
@@ -23,4 +27,5 @@ def cash_on_hand():
                     cash_deficit.append(f'[CASH DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day)- int(row[1])}')
                 prev_day = int(row[1])
                 line_count += 1
+#return keyword to return cash deficit together with f-string
         return cash_deficit
