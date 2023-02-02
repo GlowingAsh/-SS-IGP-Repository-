@@ -1,7 +1,7 @@
 from pathlib import Path
 import csv
 
-def cash_on_hand():
+def cash_on_hand_function():
     """
     created a cash on hand function to calculate cash_on_hand
     """
@@ -11,13 +11,15 @@ def cash_on_hand():
     # created a variable to calculate the cash deficit, if there was a cash deficit
     # the empty list would be used to store the cash deficit
     
-    with open ('csv_reports\Cash_on_hand.csv') as csv_file:
+    fp = Path.cwd()/"csv_reports\Cash_on_hand.csv"
+
+    with fp.open (mode="r", encoding="UTF-8", newline="") as file:
         # opening the csv file on cash on hand to use the data
-        csv_reader = csv.reader(csv_file, delimiter = ',')
+        reader = csv.reader(file)
         line_count = 0
         
 # used for loop to execute the body of code once for each item
-        for row in csv_reader:
+        for row in reader:
             # equility operator to compare if line_count equals to 0
             if line_count == 0:
                 line_count += 1
