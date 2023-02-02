@@ -9,7 +9,7 @@ def main():
   diff_cash = cash_on_hand.cash_on_hand_function()
   max_overhead_val = overheads.overheads_function()
 
-
+# max_over_val variable is assigned to summary then line break with the use of \n
   summary = max_overhead_val + '\n'
 
  # Check if diff_cash is empty
