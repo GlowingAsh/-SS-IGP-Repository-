@@ -20,11 +20,12 @@ def profit_loss_function():
 
     # Skip header
     next(reader) 
-    #start counting the line of the csv file
+    #starts counting the first row of the csv file
     line_count = 0
+   
     prev_day_value = 0
     
-    # Loop through all the rows
+    # A for loop is used in the reader to store the values of net profit into prev_day_value
     for row in reader:
       if line_count == 0:
         line_count += 1 
