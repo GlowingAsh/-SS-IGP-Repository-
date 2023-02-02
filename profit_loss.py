@@ -28,13 +28,13 @@ def profit_loss():
     
     #loop through all the rows
     for row in reader:
-      if line count == 0:
+      if line_count == 0:
         line_count += 1 
         prev_day_value = row[4]
       else:
-        if(line_count > 1 and (int(row[4]) < int(prev_day_val))
+        if(line_count > 1 and (int(row[4]) < int(prev_day_val))):
         
-        profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val} - int(row[4])}') 
+          profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val) - int(row[4])}') 
         line_count += 1 
         prev_day_val = row[4]                                                                   
   return profit_loss
