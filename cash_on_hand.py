@@ -20,7 +20,7 @@ def cash_on_hand_function():
         reader = csv.reader(file)
         line_count = 0
         
-        # used for loop to execute the body of code once for each item
+        # loop through all the rows to execute the body of code once for each item
         for row in reader:
             # equility operator to compare if line_count equals to 0
             if line_count == 0:
@@ -32,6 +32,7 @@ def cash_on_hand_function():
                     # use '.append' to append the cash deficit as a list back to the empty list
                     cash_deficit.append(f'[CASH DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day)- int(row[1])}')
                 prev_day = int(row[1])
+                # increments the value by 1
                 line_count += 1
         # return keyword to return cash deficit together with f-string
         return cash_deficit
