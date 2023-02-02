@@ -10,7 +10,7 @@ def profit_loss_function():
   # Creates an empty list
   profit_loss = []
   
-  # Create a file to csv file.
+  # # The Profit_Loss.csv file will be opened in read mode with UTF-8 encoding
   fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
   
   # Read the csv file 
