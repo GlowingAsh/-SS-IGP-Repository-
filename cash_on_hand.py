@@ -24,15 +24,16 @@ def cash_on_hand_function():
         for row in reader:
             # equility operator to compare if line_count equals to 0
             if line_count == 0:
-                # increments the value by 1
+                # increments the row number
                 line_count += 1
                 prev_day = row[1]
             else:
                 if (line_count > 1 and (int(row[1]) < int(prev_day))):
                     # use '.append' to append the cash deficit as a list back to the empty list
                     cash_deficit.append(f'[CASH DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day)- int(row[1])}')
+                # use int() to convert string to a float
                 prev_day = int(row[1])
-                # increments the value by 1
+                # increments the row number
                 line_count += 1
         # return keyword to return cash deficit together with f-string
         return cash_deficit
