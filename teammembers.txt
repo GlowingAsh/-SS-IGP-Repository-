@@ -1,7 +1,8 @@
 TEAM: SS
 Class: TF01
 
-Nur Aisyah S10242303K 
-Boh jun xiang S10242939
-Ludwig Koh Zheng Yang S10243117F
+Nur Aisyah S10242303
+Boh Jun Xiang S10242939
+Ludwig Koh Zheng Yang S10243117
 Sarah Sofiya S10239964
+Chow Hong Kun S10247239
