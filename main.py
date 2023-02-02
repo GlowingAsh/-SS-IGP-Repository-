@@ -19,7 +19,7 @@ def main():
       summary +=  profit_losss[i] + '\n'
 
   fp = Path.cwd(summary)/"cluster_report.txt"
-  with fp.open(mode="w", encoding="UTF-8") as file:
+  with fp.open(mode="w", encodin="UTF-8") as file:
     file.write(summary)
 
 main()
