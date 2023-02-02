@@ -20,6 +20,8 @@ def cash_on_hand():
                 prev_day = row[1]
             else:
                 if (line_count > 1 and (int(row[1]) < int(prev_day))):
+                    cash_deficit.append(f'[CASH DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day)- int(row[1])}')
+                prev_day = int(row[1])
 
                 
 
