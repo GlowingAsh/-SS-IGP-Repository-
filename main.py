@@ -1,9 +1,9 @@
 import cash_on_hand,overheads, profit_loss
 
 def main():
+  profit_losss = profit_loss.profit_loss_function()
   diff_cash = cash_on_hand.cash_on_hand_function()
   max_overhead_val = overheads.overheads_function()
-  profit_losss = profit_loss.profit_loss_function()
 
   summary = max_overhead_val + '\n'
 
