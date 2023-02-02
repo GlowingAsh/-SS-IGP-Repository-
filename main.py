@@ -9,6 +9,7 @@ def main():
   diff_cash = cash_on_hand.cash_on_hand_function()
   max_overhead_val = overheads.overheads_function()
 
+
   summary = max_overhead_val + '\n'
 
  # Check if diff_cash is empty
