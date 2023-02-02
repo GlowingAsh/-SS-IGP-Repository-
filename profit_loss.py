@@ -7,20 +7,20 @@ def profit_loss_function():
   Will compute the difference in the net profit column if the net profit on the current day is lower than the previous day.
   """
   
-  # Create an empty list
+  # Creates an empty list
   profit_loss = []
   
   # Create a file to csv file.
   fp = Path.cwd()/"csv_reports"/"Profit_Loss.csv"
   
-  # Read the csv file to append Net Profit
+  # Read the csv file 
   with fp.open(mode="r", encoding="UTF-8", newline="") as file:
   
     reader = csv.reader(file)
 
     # Skip header
     next(reader) 
-  
+    #start counting the line of the csv file
     line_count = 0
     prev_day_value = 0
     
