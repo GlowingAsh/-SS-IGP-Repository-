@@ -9,9 +9,11 @@ def main():
 
   if(len(diff_cash))==0:
     summary += '[CASH SURPLUS] CASH ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY'
+
   else:
     for i in range(len(diff_cash)):
       summary +=  diff_cash[i] + '\n'
+      
   if(len(profit_losss))==0:
     summary += '[NET PROFT SURPLUS] NET PROFIT ON EACH DAY IS HIGHER THAN THE PREVIOUS DAY '
   else:
