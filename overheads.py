@@ -1,39 +1,34 @@
 from pathlib import Path
 import csv
 
-fp_read = Path.cwd()/"csv_reports"/"Overheads.csv"
-
-with fp_read.open(mode="r", encoding="UTF-8", newline="") as file:
-    reader = csv.reader(file)
-    next(reader) # skip header
-
-    category = [] # List called category to store values under Category
-    overheads = [] # List called overheads to store values under Overheads
-
-    for row in reader:
-        category.append(row[0]) # Value in index 0 will be appended into Category
-        overheads.append(float(row[1])) # Value in index 1 will be appended into Overheads, since there is decimals in the values, it will be stored as a float value
-        
-
-def highest_oh(category, overheads):
+def overheads_function():
     """
-    Function will be able to identify the highest overhead category 
-    and state the the percentage of the category
-    The only two values in the function will be category and overheads.
+    Function called overheads will identify the highest overhead category and state the %
     """
-    highest = 0
-    highest_category = ""
+    high_overhead= []
+    # List created called high_overhead to store the value of the highest overhead
 
-    for index, value in enumerate(overheads):
-        if value > highest:
-            highest = value
-            highest_category = category[index]
-            
-    return f"[HIGHEST OVERHEAD] {highest_category}: {highest}"
+    fp = Path.cwd()/"csv_reports\Overheads.csv"
+    # File path will be under csv_reports folder, selecting the Overheads.csv file
 
-print(highest_oh(category, overheads))
-
-        
+    with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+        reader = csv.reader(file)
+        next(reader)
+        #skips the first line
+        line_count = 0
+        # 
+        max_value = 0
+        #
+        for row in reader:
+            if line_count == 0:
+                line_count += 1
+            else:
+                if(line_count > 1 and (float(row[1]) > float(max_value))):
+                    max_value = float(row[1])
+                max_overhead = row
+                line_count += 1
+        max_overhead_value = f"[HIGHEST OVERHEADS] {max_overhead[0].upper()}: {max_overhead[1]}%"
+        return max_overhead_value
 
 
 
