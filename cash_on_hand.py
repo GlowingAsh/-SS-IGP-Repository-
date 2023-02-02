@@ -13,7 +13,7 @@ def cash_on_hand():
         # opening the csv file on cash on hand to use the data
         csv_Reader = csv.reader(csv_file, delimiter = ',')
         line_count = 0
-
+# used for loop 
         for row in csv_reader:
             if lne_count == 0:
                 line_count += 1
