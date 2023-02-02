@@ -18,4 +18,8 @@ def cash_on_hand():
             if lne_count == 0:
                 line_count += 1
                 prev_day = row[1]
+            else:
+                if (line_count > 1 and (int(row[1]) < int(prev_day))):
+
+                
 
