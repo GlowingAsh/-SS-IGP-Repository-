@@ -3,11 +3,10 @@ import csv
 
 def cash_on_hand_function():
     """
-    created a cash on hand function to calculate cash_on_hand
-
     Function called cash_on_hand_function
     Will compute the difference in Cash-On-Hand if the current day is lower than the previous day
     """
+
     # Created a variable to calculate the cash deficit, if there was a cash deficit
     # The empty list would be used to store the cash deficit
     cash_deficit = []
@@ -44,5 +43,5 @@ def cash_on_hand_function():
                 # Increments the row number
                 line_count += 1
 
-        # Return keyword to return cash deficit together with f-string
-        return cash_deficit
+    # Return keyword to return cash deficit together with f-string
+    return cash_deficit
