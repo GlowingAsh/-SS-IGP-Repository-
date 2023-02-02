@@ -12,9 +12,11 @@ def overheads_function():
     # File path will be under csv_reports folder, selecting the Overheads.csv file
 
     with fp.open(mode="r", encoding="UTF-8", newline="") as file:
+    
         reader = csv.reader(file)
         next(reader)
         #skips the first line
+
         line_count = 0
         # 
         max_value = 0
