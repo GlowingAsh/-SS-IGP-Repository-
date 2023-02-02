@@ -15,7 +15,7 @@ def cash_on_hand():
         line_count = 0
 # used for loop 
         for row in csv_reader:
-            if lne_count == 0:
+            if line_count == 0:
                 line_count += 1
                 prev_day = row[1]
             else:
