@@ -19,7 +19,6 @@ def main():
       summary +=  profit_losss[i] + '\n'
 
   with open("summary_report.txt","a+") as f:
-    f.write(summary)
-  print("Data inserted Successfully in summary file") 
-
+    f.write(summary) 
+    
 main()
