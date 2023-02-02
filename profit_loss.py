@@ -27,14 +27,16 @@ def profit_loss_function():
     
     # A for loop is used in the reader to store the values of net profit into prev_day_value
     for row in reader:
-      if line_count == 0:
-        line_count += 1 
-        prev_day_value = row[4]
-      else:
-        if(line_count > 1 and (int(row[4]) < int(prev_day_val))): #if not it will return to the code here
-        
-          profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val) - int(row[4])}') 
-        line_count += 1 
-        prev_day_val = row[4]      
+        if line_count == 0:
+         line_count += 1 
+         prev_day_value = row[4]
+        else:
+            if int(row[4]) < int(prev_day_value):
+                profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_value) - int(row[4])}') 
+            
+            elif int(row[4]) > int(prev_day_value):
+                profit_loss.append(f'[NET PROFIT SURPLUS] DAY: {row[0]}, AMOUNT: USD{int(row[4]) - int(prev_day_value)}')
+            line_count += 1 
+            prev_day_value = row[4]         
   # Return keyword to return profit loss together with f-string
   return profit_loss
