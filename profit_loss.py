@@ -6,7 +6,7 @@
 from pathlib import Path
 import csv
 
-def profit_loss():
+def profit_loss_function():
   """
   -function will return days where net profit is lower than the previous days with the differences
   """
