@@ -11,7 +11,7 @@ def cash_on_hand():
     # created a variable to calculate the cash deficit, if there was a cash deficit
     with open ('csv_reports\Cash_on_hand.csv') as csv_file:
         # opening the csv file on cash on hand to use the data
-        csv_Reader = csv.reader(csv_file, delimiter = ',')
+        csv_reader = csv.reader(csv_file, delimiter = ',')
         line_count = 0
 # used for loop 
         for row in csv_reader:
