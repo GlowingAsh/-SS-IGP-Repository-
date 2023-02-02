@@ -31,9 +31,10 @@ def profit_loss_function():
         line_count += 1 
         prev_day_value = row[4]
       else:
-        if(line_count > 1 and (int(row[4]) < int(prev_day_val))): 
+        if(line_count > 1 and (int(row[4]) < int(prev_day_val))): #if not it will return to the code here
         
           profit_loss.append(f'[PROFIT DEFICIT] DAY: {row[0]}, AMOUNT: USD{int(prev_day_val) - int(row[4])}') 
         line_count += 1 
-        prev_day_val = row[4]                                                                   
+        prev_day_val = row[4]      
+  # Return keyword to return profit loss together with f-string
   return profit_loss
