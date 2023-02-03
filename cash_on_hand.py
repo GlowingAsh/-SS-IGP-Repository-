@@ -4,7 +4,8 @@ import csv
 def cash_on_hand_function():
     """
     Function called cash_on_hand_function
-    Will compute the difference in Cash-On-Hand if the current day is lower than the previous day
+    Will compute the difference in Cash-On-Hand 
+    if the current day is lower than the previous day
     """
 
     # Created a variable to calculate the cash deficit, if there was a cash deficit
